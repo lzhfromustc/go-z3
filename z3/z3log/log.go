@@ -22,7 +22,8 @@ import "C"
 func Open(filename string) bool {
 	cfilename := C.CString(filename)
 	defer C.free(unsafe.Pointer(cfilename))
-	return C.Z3_open_log(cfilename) != 0
+	//return C.Z3_open_log(cfilename) != 0
+	return C.Z3_open_log(cfilename) == true
 }
 
 // Append emits text to the Z3 interaction log.

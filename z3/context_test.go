@@ -19,9 +19,9 @@ func expectPanic(t *testing.T, pattern string, f func()) {
 		err := recover()
 		if err == nil {
 			t.Fatalf("want panic matching %q, got none", pattern)
-		} else if s := fmt.Sprint(err); !re.MatchString(s) {
-			t.Fatalf("want panic matching %q, got %s", pattern, err)
-		}
+			} else if s := fmt.Sprint(err); !re.MatchString(s) {
+				t.Fatalf("want panic matching %q, got %s", pattern, err)
+			}
 	}()
 	f()
 }
